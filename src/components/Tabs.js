@@ -6,7 +6,6 @@ const Tabs = ({items}) => {
   const handleClickEvent = (index) => {
     setActive(index);
   };
-
   return (
     <div>
         <ul>
