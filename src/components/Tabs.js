@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 
 const Tabs = ({items}) => {
-  const [active,setActive]=useState("");
+    console.log(items[0].content);
+  const [active,setActive]=useState(0);
+  console.log(active);
 
-  const handleClickEvent = (index) => {
-    setActive(index);
-  };
   return (
     <div>
         <ul>
-          {items.map((tab,index)=>(
-            <li key={index} onClick={()=>handleClickEvent(index)} >
-              {tab.title}
-            </li>
-          ))}
+            {items.map((element,index) =>(
+                    <li key="index" onClick={()=>{setActive(index)}}>
+                    {element.title}
+                </li>
+                ))
+            }
         </ul>
-        <div>
         {items[active].content}
-        </div> 
     </div>
   )
 }
